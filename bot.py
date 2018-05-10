@@ -34,9 +34,24 @@ def name(m):
                     in ['Работники ПФ','Спец по обс кор кл-ов']])
         keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
                     in ['Зам рука по КБ','=>']])
-        msg = bot.send_message(m.chat.id,'-----------Выберите должность----------',reply_markup=keyboard) 
+        msg = bot.send_message(m.chat.id,'-----------Выберите должность----------',reply_markup=keyboard)
     elif m.text =='Кор.Блок':
-        bot.send_message(m.chat.id,'Нет информации')
+        keyboard = types.InlineKeyboardMarkup()
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Общие положения.']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Аппарат ТБ']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Малый и микро-бизнес']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Крупный и средний бизнес']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Клиентские подр-ия']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Кредит. подр-я и мон-г залогов']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['->']])
+        msg = bot.send_message(m.chat.id,'----------Выберите должность---------',reply_markup=keyboard)       
 @bot.callback_query_handler(func=lambda c:True)
 def inline(c):
     if c.data == 'Общие положения':
@@ -187,6 +202,64 @@ def inline(c):
         keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
                     in ['Зам рука по КБ','=>']])
         bot.edit_message_reply_markup(c.message.chat.id,message_id=c.message.message_id,reply_markup=keyboard)
+    elif c.data == '->':
+        keyboard = types.InlineKeyboardMarkup()
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Центр залог экспертизы']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Транзакц-ый бизнес']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Центр корп-х решений']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Лин-лаборатория']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['<-']])
+        bot.edit_message_reply_markup(c.message.chat.id,message_id=c.message.message_id,reply_markup=keyboard)
+    elif c.data == '<-':      
+        keyboard = types.InlineKeyboardMarkup()
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Общие положения.']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Аппарат ТБ']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Малый и микро-бизнес']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Крупный и средний бизнес']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Клиентские подр-ия']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Кредит. подр-я и мон-г залогов']])
+        bot.edit_message_reply_markup(c.message.chat.id,message_id=c.message.message_id,reply_markup=keyboard)
+    elif c.data == 'Общие положения.':
+       bot.send_document(c.message.chat.id,"BQADAgADOwEAAo3YoEtUY6YnF8_vbQI")
+    elif c.data == 'Аппарат ТБ':
+       bot.send_document(c.message.chat.id,"BQADAgADUAIAAkK7qEtl4I15MHHilAI")
+       bot.send_document(c.message.chat.id,"BQADAgADUQIAAkK7qEuz28ZcyFuXcAI")
+    elif c.data == 'Малый и микро-бизнес':
+       bot.send_document(c.message.chat.id,"BQADAgADPQEAAo3YoEt-G1-uQTkjkQI")
+       bot.send_document(c.message.chat.id,"BQADAgADUgIAAkK7qEu_9vNzFSug1QI")
+    elif c.data == 'Крупный и средний бизнес':
+       bot.send_document(c.message.chat.id,"BQADAgADPgEAAo3YoEv8RPK66DMTcwI")
+       bot.send_document(c.message.chat.id,"BQADAgADUwIAAkK7qEvEcq4EwRg6uwI")
+    elif c.data == 'Клиентские подр-ия':
+       bot.send_document(c.message.chat.id,"BQADAgADVAIAAkK7qEteFZ-frUv3dgI")
+       bot.send_document(c.message.chat.id,"BQADAgADVQIAAkK7qEsuiF-2hUv2iAI")
+    elif c.data == 'Кредит. подр-я и мон-г залогов':
+       bot.send_document(c.message.chat.id,"BQADAgADVgIAAkK7qEs76NdhR22rgwI")
+       bot.send_document(c.message.chat.id,"BQADAgADVwIAAkK7qEub3Gd-CYkHXgI")
+    elif c.data == 'Центр залог экспертизы':
+       bot.send_document(c.message.chat.id,"BQADAgADQAEAAo3YoEvL8QptAAHqitkC")
+       bot.send_document(c.message.chat.id,"BQADAgADQQEAAo3YoEsEXFuV0HfZrAI")
+    elif c.data == 'Транзакц-ый бизнес':
+       bot.send_document(c.message.chat.id,"BQADAgADQgEAAo3YoEuipv_7SNw9vQI")
+       bot.send_document(c.message.chat.id,"BQADAgADWAIAAkK7qEvkCxlAvQO6bQI")
+    elif c.data == 'Центр корп-х решений':
+       bot.send_document(c.message.chat.id,"BQADAgADWQIAAkK7qEu4ICob7_qfngI")
+       bot.send_document(c.message.chat.id,"BQADAgADWgIAAkK7qEvFn6dsMknrRgI")
+    elif c.data == 'Лин-лаборатория':
+       bot.send_document(c.message.chat.id,"BQADAgADWwIAAkK7qEu9qGOtJ8gpoQI")     
+        
+
 
 
 
