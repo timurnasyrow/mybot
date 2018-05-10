@@ -231,33 +231,33 @@ def inline(c):
                     in ['Кредит. подр-я и мон-г залогов']])
         bot.edit_message_reply_markup(c.message.chat.id,message_id=c.message.message_id,reply_markup=keyboard)
     elif c.data == 'Общие положения.':
-       bot.send_document(c.message.chat.id,"BQADAgADOwEAAo3YoEtUY6YnF8_vbQI")
+       bot.send_document(c.message.chat.id,"BQADAgADUwEAArUYqUuQYmeegNXVcAI")
     elif c.data == 'Аппарат ТБ':
-       bot.send_document(c.message.chat.id,"BQADAgADUAIAAkK7qEtl4I15MHHilAI")
-       bot.send_document(c.message.chat.id,"BQADAgADUQIAAkK7qEuz28ZcyFuXcAI")
+       bot.send_document(c.message.chat.id,"BQADAgADYwQAAhdNoEv7oMIYgjxBHwI")
+       bot.send_document(c.message.chat.id,"BQADAgADZAQAAhdNoEu5s84dE2kfJAI")
     elif c.data == 'Малый и микро-бизнес':
-       bot.send_document(c.message.chat.id,"BQADAgADPQEAAo3YoEt-G1-uQTkjkQI")
-       bot.send_document(c.message.chat.id,"BQADAgADUgIAAkK7qEu_9vNzFSug1QI")
+       bot.send_document(c.message.chat.id,"BQADAgADVAEAArUYqUvzw-vsdi38MQI")
+       bot.send_document(c.message.chat.id,"BQADAgADVQEAArUYqUsoKBdxA0IlmgI")
     elif c.data == 'Крупный и средний бизнес':
-       bot.send_document(c.message.chat.id,"BQADAgADPgEAAo3YoEv8RPK66DMTcwI")
-       bot.send_document(c.message.chat.id,"BQADAgADUwIAAkK7qEvEcq4EwRg6uwI")
+       bot.send_document(c.message.chat.id,"BQADAgADVgEAArUYqUs8ag4pKQYt_wI")
+       bot.send_document(c.message.chat.id,"BQADAgADVwEAArUYqUsI0alxCK9J9QI")
     elif c.data == 'Клиентские подр-ия':
-       bot.send_document(c.message.chat.id,"BQADAgADVAIAAkK7qEteFZ-frUv3dgI")
-       bot.send_document(c.message.chat.id,"BQADAgADVQIAAkK7qEsuiF-2hUv2iAI")
+       bot.send_document(c.message.chat.id,"BQADAgADaQQAAhdNoEsepnx2J0lSkgI")
+       bot.send_document(c.message.chat.id,"BQADAgADWAEAArUYqUvY73970A4a3AI")
     elif c.data == 'Кредит. подр-я и мон-г залогов':
-       bot.send_document(c.message.chat.id,"BQADAgADVgIAAkK7qEs76NdhR22rgwI")
-       bot.send_document(c.message.chat.id,"BQADAgADVwIAAkK7qEub3Gd-CYkHXgI")
+       bot.send_document(c.message.chat.id,"BQADAgADWQEAArUYqUssTljCpVllEAI")
+       bot.send_document(c.message.chat.id,"BQADAgADWgEAArUYqUtJeVIrfXjwQQI")
     elif c.data == 'Центр залог экспертизы':
-       bot.send_document(c.message.chat.id,"BQADAgADQAEAAo3YoEvL8QptAAHqitkC")
-       bot.send_document(c.message.chat.id,"BQADAgADQQEAAo3YoEsEXFuV0HfZrAI")
+       bot.send_document(c.message.chat.id,"BQADAgADXQEAArUYqUsaWJue0R6h_wI")
+       bot.send_document(c.message.chat.id,"BQADAgADXgEAArUYqUtJ718lSkA7dAI")
     elif c.data == 'Транзакц-ый бизнес':
-       bot.send_document(c.message.chat.id,"BQADAgADQgEAAo3YoEuipv_7SNw9vQI")
-       bot.send_document(c.message.chat.id,"BQADAgADWAIAAkK7qEvkCxlAvQO6bQI")
+       bot.send_document(c.message.chat.id,"BQADAgADagQAAhdNoEta8pByCcpiyQI")
+       bot.send_document(c.message.chat.id,"BQADAgADawQAAhdNoEu98tX8W9BmQQI")
     elif c.data == 'Центр корп-х решений':
-       bot.send_document(c.message.chat.id,"BQADAgADWQIAAkK7qEu4ICob7_qfngI")
-       bot.send_document(c.message.chat.id,"BQADAgADWgIAAkK7qEvFn6dsMknrRgI")
+       bot.send_document(c.message.chat.id,"BQADAgADYgEAArUYqUvOsEITdJQtMAI")
+       bot.send_document(c.message.chat.id,"BQADAgADYwEAArUYqUvLkGGVw-9q3gI")
     elif c.data == 'Лин-лаборатория':
-       bot.send_document(c.message.chat.id,"BQADAgADWwIAAkK7qEu9qGOtJ8gpoQI")     
+       bot.send_document(c.message.chat.id,"BQADAgADbAQAAhdNoEvJRTBQktWGrgI")     
         
 
 
