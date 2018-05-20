@@ -9,11 +9,13 @@ def start(o):
       bot.send_message(o.chat.id,'Привет, воспользуйся кнопками меню!')
       keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
       keyboard.add(*[types.KeyboardButton(name) for name in ['Розн.Блок', 'Кор.Блок']])
+      keyboard.add(*[types.KeyboardButton(name) for name in ['ПА и ПВ']])
       msg = bot.send_message(o.chat.id, 'Выберите блок!',
         reply_markup=keyboard)
 def first(m):
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    keyboard.add(*[types.KeyboardButton(name) for name in ['Розн.Блок', 'Кор.Блок']])   
+    keyboard.add(*[types.KeyboardButton(name) for name in ['Розн.Блок', 'Кор.Блок']])
+    keyboard.add(*[types.KeyboardButton(name) for name in ['ПА и ПВ']])
     msg = bot.send_message(m.chat.id, 'Выберите блок!',
         reply_markup=keyboard)
 @bot.message_handler(func=lambda m:True)
@@ -22,6 +24,8 @@ def name(m):
         keyboard = types.InlineKeyboardMarkup()
         keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
                     in ['Общие положения']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Распоряжение-420']])
         keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
                     in ['Консультант','М-р по обслуж']])
         keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
@@ -51,7 +55,14 @@ def name(m):
                     in ['Кредит. подр-я и мон-г залогов']])
         keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
                     in ['->']])
-        msg = bot.send_message(m.chat.id,'----------Выберите должность---------',reply_markup=keyboard)       
+        msg = bot.send_message(m.chat.id,'----------Выберите должность---------',reply_markup=keyboard)
+    elif m.text =='ПА и ПВ':
+        keyboard = types.InlineKeyboardMarkup()
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Физ. лица']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Юр. Лица']])
+        msg = bot.send_message(m.chat.id,'----------Выберите должность---------',reply_markup=keyboard)      
 @bot.callback_query_handler(func=lambda c:True)
 def inline(c):
     if c.data == 'Общие положения':
@@ -78,6 +89,21 @@ def inline(c):
         bot.send_document(c.message.chat.id,"BQADAgADvwEAAodDcUubMeWeSNVs2QI")
     elif c.data == 'Зам рука по КБ':
         bot.send_document(c.message.chat.id,"BQADAgADwAEAAodDcUve_U-MzylJCwI")
+    elif c.data == 'Распоряжение-420':
+          keyboard = types.InlineKeyboardMarkup()
+          keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                        in ['Распоряжение']])
+          keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                        in ['ВСП','ОПЕРУ']])
+          keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                        in ['Прямые продажи','Эквайринг']])
+          keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                        in ['Партнеры','Платежи']])
+          keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                        in ['Сбербанк1','Планирование']])
+          keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                        in ['ЦУСУС','Назад']])
+          bot.edit_message_reply_markup(c.message.chat.id,message_id=c.message.message_id,reply_markup=keyboard)    
     elif c.data == '=>':
           keyboard = types.InlineKeyboardMarkup()
           keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
@@ -138,7 +164,9 @@ def inline(c):
           keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
                         in ['Спец под-ки прод-ж','Спец сервис подд экв']])
           keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
-                        in ['<==','Спец техн подд экв']])
+                        in ['Спец техн подд экв','Приложение_11']])
+          keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                        in ['<==']])
           bot.edit_message_reply_markup(c.message.chat.id,message_id=c.message.message_id,reply_markup=keyboard)
     elif c.data == 'М-р по ипот кр':
        bot.send_document(c.message.chat.id,"BQADAgADxAEAAodDcUtLEk-L0SRrrQI")
@@ -230,6 +258,26 @@ def inline(c):
         keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
                     in ['Кредит. подр-я и мон-г залогов']])
         bot.edit_message_reply_markup(c.message.chat.id,message_id=c.message.message_id,reply_markup=keyboard)
+    elif c.data == 'Назад':
+        keyboard = types.InlineKeyboardMarkup()
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Общие положения']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Распоряжение-420']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Консультант','М-р по обслуж']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Асс-т КМ СБ-Премьер','Сервис-менеджер']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['М-р по продажам','КМ СБ-Премьер']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Рук центра ПО','Рук офиса и зам']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Работники ПФ','Спец по обс кор кл-ов']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Зам рука по КБ','=>']])
+        bot.edit_message_reply_markup(c.message.chat.id,message_id=c.message.message_id,reply_markup=keyboard) 
+        
     elif c.data == 'Общие положения.':
        bot.send_document(c.message.chat.id,"BQADAgADUwEAArUYqUuQYmeegNXVcAI")
     elif c.data == 'Аппарат ТБ':
@@ -257,7 +305,36 @@ def inline(c):
        bot.send_document(c.message.chat.id,"BQADAgADYgEAArUYqUvOsEITdJQtMAI")
        bot.send_document(c.message.chat.id,"BQADAgADYwEAArUYqUvLkGGVw-9q3gI")
     elif c.data == 'Лин-лаборатория':
-       bot.send_document(c.message.chat.id,"BQADAgADbAQAAhdNoEvJRTBQktWGrgI")     
+       bot.send_document(c.message.chat.id,"BQADAgADbAQAAhdNoEvJRTBQktWGrgI")
+    elif c.data == 'Физ. лица':
+       bot.send_document(c.message.chat.id,"BQADAgAD1AEAAtmzEUgV-PrRki8drQI")
+       bot.send_document(c.message.chat.id,"BQADAgADTAEAAlqICEgj2Sg9XecVYgI")
+    elif c.data == 'Юр. Лица':
+       bot.send_document(c.message.chat.id,"BQADAgADTQEAAlqICEieXLLZLzaVfwI")
+       bot.send_document(c.message.chat.id,"BQADAgADTgEAAlqICEilzXOdEBlxawI")   
+    elif c.data == 'Распоряжение':
+       bot.send_document(c.message.chat.id,"BQADAgAD1QEAAtmzEUgycYRsjiLFyQI")
+    elif c.data == 'ВСП':
+       bot.send_document(c.message.chat.id,"BQADAgADTwEAAlqICEj2ooadxmJA0AI")
+    elif c.data == 'ОПЕРУ':
+       bot.send_document(c.message.chat.id,"BQADAgAD1gEAAtmzEUij9Aol74GbwgI")
+    elif c.data == 'Прямые продажи':
+       bot.send_document(c.message.chat.id,"BQADAgADUAEAAlqICEgBkqDmU5M4xAI")
+    elif c.data == 'Эквайринг':
+       bot.send_document(c.message.chat.id,"BQADAgAD1wEAAtmzEUj5k7vmlGXxqQI")
+    elif c.data == 'Партнеры':
+       bot.send_document(c.message.chat.id,"BQADAgADUQEAAlqICEj-7l7rm97CwAI")
+    elif c.data == 'Платежи':
+       bot.send_document(c.message.chat.id,"BQADAgAD2AEAAtmzEUi43XCgCs-arQI")
+    elif c.data == 'Сбербанк1':
+       bot.send_document(c.message.chat.id,"BQADAgADUgEAAlqICEiG6xi2kA1njQI")
+    elif c.data == 'Планирование':
+       bot.send_document(c.message.chat.id,"BQADAgAD2QEAAtmzEUjABlPKKSWpywI")
+    elif c.data == 'ЦУСУС':
+       bot.send_document(c.message.chat.id,"BQADAgAD2gEAAtmzEUh6gJlWjWPIewI")
+    elif c.data == 'Приложение_11':
+       bot.send_document(c.message.chat.id,"BQADAgAD2wEAAtmzEUgxMWobLaAnVwI")   
+       
         
 
 
