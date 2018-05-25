@@ -9,13 +9,13 @@ def start(o):
       bot.send_message(o.chat.id,'Привет, воспользуйся кнопками меню!')
       keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
       keyboard.add(*[types.KeyboardButton(name) for name in ['Розн.Блок', 'Кор.Блок']])
-      keyboard.add(*[types.KeyboardButton(name) for name in ['ПА и ПВ']])
+      keyboard.add(*[types.KeyboardButton(name) for name in ['ПА и ПВ','Прочее']])
       msg = bot.send_message(o.chat.id, 'Выберите блок!',
         reply_markup=keyboard)
 def first(m):
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
     keyboard.add(*[types.KeyboardButton(name) for name in ['Розн.Блок', 'Кор.Блок']])
-    keyboard.add(*[types.KeyboardButton(name) for name in ['ПА и ПВ']])
+    keyboard.add(*[types.KeyboardButton(name) for name in ['ПА и ПВ','Прочее']])
     msg = bot.send_message(m.chat.id, 'Выберите блок!',
         reply_markup=keyboard)
 @bot.message_handler(func=lambda m:True)
@@ -38,7 +38,7 @@ def name(m):
                     in ['Работники ПФ','Спец по обс кор кл-ов']])
         keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
                     in ['Зам рука по КБ','=>']])
-        msg = bot.send_message(m.chat.id,'-----------Выберите должность----------',reply_markup=keyboard)
+        msg = bot.send_message(m.chat.id,'--------Выберите должность-------',reply_markup=keyboard)
     elif m.text =='Кор.Блок':
         keyboard = types.InlineKeyboardMarkup()
         keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
@@ -55,14 +55,27 @@ def name(m):
                     in ['Кредит. подр-я и мон-г залогов']])
         keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
                     in ['->']])
-        msg = bot.send_message(m.chat.id,'----------Выберите должность---------',reply_markup=keyboard)
+        msg = bot.send_message(m.chat.id,'-------Выберите подразделение------',reply_markup=keyboard)
     elif m.text =='ПА и ПВ':
         keyboard = types.InlineKeyboardMarkup()
         keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
                     in ['Физ. лица']])
         keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
                     in ['Юр. Лица']])
-        msg = bot.send_message(m.chat.id,'----------Выберите должность---------',reply_markup=keyboard)      
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['Руководство']])
+        msg = bot.send_message(m.chat.id,'-------Выберите подразделение-------',reply_markup=keyboard)
+    elif m.text =='Прочее':
+        keyboard = types.InlineKeyboardMarkup()
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['1201']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['3794']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['3775']])
+        keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
+                    in ['1031']])
+        msg = bot.send_message(m.chat.id,'----------Выберите методику---------',reply_markup=keyboard)    
 @bot.callback_query_handler(func=lambda c:True)
 def inline(c):
     if c.data == 'Общие положения':
@@ -334,7 +347,19 @@ def inline(c):
        bot.send_document(c.message.chat.id,"BQADAgAD2gEAAtmzEUh6gJlWjWPIewI")
     elif c.data == 'Приложение_11':
        bot.send_document(c.message.chat.id,"BQADAgAD2wEAAtmzEUgxMWobLaAnVwI")   
-       
+    elif c.data == 'Руководство':
+       bot.send_document(c.message.chat.id,"BQADAgADUgEAAvp8QEiEz6QCUmq8KgI")
+    elif c.data == '1201':
+       bot.send_document(c.message.chat.id,"BQADAgADUwEAAvp8QEherqQMt90wXAI")
+    elif c.data == '3794':
+       bot.send_document(c.message.chat.id,"BQADAgADggEAAgwLQUj7fbCKkwZ_rQI")
+    elif c.data == '3775':
+       bot.send_document(c.message.chat.id,"BQADAgADgwEAAgwLQUhLhOOU2Xwr3gI")
+       bot.send_document(c.message.chat.id,"BQADAgADVAEAAvp8QEjdRGYJJxWUPgI")
+       bot.send_document(c.message.chat.id,"BQADAgADVQEAAvp8QEjJqXyHYf8hYAI")
+    elif c.data == '1031':
+       bot.send_document(c.message.chat.id,"BQADAgADVgEAAvp8QEgXmW7yvV0JywI")
+         
         
 
 
