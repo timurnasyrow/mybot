@@ -79,7 +79,7 @@ def name(m):
 @bot.callback_query_handler(func=lambda c:True)
 def inline(c):
     if c.data == 'Общие положения':
-        bot.send_document(c.message.chat.id,"BQADAgADuwEAAodDcUvTUaeGmfZ3ggI")
+        bot.send_document(c.message.chat.id,"BQADAgADNgEAAqZFOEu14-39LThhrAI")
     elif c.data == 'Консультант':
         bot.send_document(c.message.chat.id,"BQADAgADvAEAAodDcUvAqyVLcx-0RwI")
     elif c.data == 'М-р по обслуж':
@@ -87,15 +87,15 @@ def inline(c):
     elif c.data == 'Асс-т КМ СБ-Премьер' :
         bot.send_document(c.message.chat.id,"BQADAgADvQEAAodDcUuZe2rQ6xCCfQI")
     elif c.data == 'Сервис-менеджер':
-        bot.send_document(c.message.chat.id,"BQADAgADBAEAAj_5eEupUy2_WYc2wAI")
+        bot.send_document(c.message.chat.id,"BQADAgADNQEAAqZFOEuzBMNc0oT5OAI")
     elif c.data == 'М-р по продажам':
-        bot.send_document(c.message.chat.id,"BQADAgADBQEAAj_5eEv5VTB_aVEemAI")
+        bot.send_document(c.message.chat.id,"BQADAgADNwEAAqZFOEvPnvPq3a08AwI")
     elif c.data == 'КМ СБ-Премьер':
-        bot.send_document(c.message.chat.id,"BQADAgADBgEAAj_5eEvBa_27drNXpAI")
+        bot.send_document(c.message.chat.id,"BQADAgADOAEAAqZFOEvV4YNH1gMQnQI")
     elif c.data == 'Рук центра ПО':
-        bot.send_document(c.message.chat.id,"BQADAgADBwEAAj_5eEu4aC-EN5ROuQI")
+        bot.send_document(c.message.chat.id,"BQADAgADOQEAAqZFOEvE95CWK4DbygI")
     elif c.data == 'Рук офиса и зам':
-        bot.send_document(c.message.chat.id,"BQADAgADCAEAAj_5eEsi7_btSiJ6GQI")
+        bot.send_document(c.message.chat.id,"BQADAgADOgEAAqZFOEtFQYsVjFQ_kwI")
     elif c.data == 'Работники ПФ':
         bot.send_document(c.message.chat.id,"BQADAgADvgEAAodDcUsdTCi7Mzg2OAI")
     elif c.data == 'Спец по обс кор кл-ов':
@@ -137,9 +137,9 @@ def inline(c):
                         in ['<=','==>']])
           bot.edit_message_reply_markup(c.message.chat.id,message_id=c.message.message_id,reply_markup=keyboard)
     elif c.data == 'Спец по ПП':
-       bot.send_document(c.message.chat.id,"BQADAgADCQEAAj_5eEtA6CDqRnyyygI")
+       bot.send_document(c.message.chat.id,"BQADAgADOwEAAqZFOEv1nZqkMLfRoQI")
     elif c.data == 'Рук гр по ПП':
-       bot.send_document(c.message.chat.id,"BQADAgADCgEAAj_5eEuDPRb3E2MErAI")
+       bot.send_document(c.message.chat.id,"BQADAgADPAEAAqZFOEuTYNlSgvdd2gI")
     elif c.data == 'М-р по пр зарп пр-в':
        bot.send_document(c.message.chat.id,"BQADAgADCwEAAj_5eEuw4BJ8OPbg_wI")
     elif c.data == 'Спец по сопр зар пр-в':
@@ -147,17 +147,17 @@ def inline(c):
     elif c.data == 'Спец по зарп пр-м':
        bot.send_document(c.message.chat.id,"BQADAgADwQEAAodDcUvijDD0UMRj9gI")
     elif c.data == 'Конс-т по ПФР':
-       bot.send_document(c.message.chat.id,"BQADAgADDQEAAj_5eEsrUNBvIYIy_gI")
+       bot.send_document(c.message.chat.id,"BQADAgADPQEAAqZFOEuSmAoGtiU2wAI")
     elif c.data == 'М-р соц программ':
        bot.send_document(c.message.chat.id,"BQADAgADwgEAAodDcUsQbTnDlvvUDAI")
     elif c.data == 'Нач сек-а по ПФР':
-       bot.send_document(c.message.chat.id,"BQADAgADDgEAAj_5eEv9e9eUYquo6gI")
+       bot.send_document(c.message.chat.id,"BQADAgADYAEAAkD3OEuNDiHGNVAZeAI")
     elif c.data == 'Рук ВИП ВСП':
-       bot.send_document(c.message.chat.id,"BQADAgADDwEAAj_5eEsbHXS6reJLOAI")
+       bot.send_document(c.message.chat.id,"BQADAgADPgEAAqZFOEsuCVg_RklpwgI")
     elif c.data == 'Зам рука ВИП ВСП':
        bot.send_document(c.message.chat.id,"BQADAgADEAEAAj_5eEs4lxh4DN7aDwI")
     elif c.data == 'КМ ВИП':
-       bot.send_document(c.message.chat.id,"BQADAgADwwEAAodDcUu7CqugWn-CdAI")
+       bot.send_document(c.message.chat.id,"BQADAgADPwEAAqZFOEvcvlxxgB_Z7AI")
     elif c.data == 'Опер-й м-р':
        bot.send_document(c.message.chat.id,"BQADAgADEQEAAj_5eEvnnjbDPv4UiAI")
     elif c.data == 'Адм-р зала':
@@ -177,9 +177,9 @@ def inline(c):
           keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
                         in ['Спец под-ки прод-ж','Спец сервис подд экв']])
           keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
-                        in ['Спец техн подд экв','Приложение_11']])
+                        in ['Спец техн подд экв','Лин-Лаб']])
           keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
-                        in ['<==']])
+                        in ['<==','Приложение_11']])
           bot.edit_message_reply_markup(c.message.chat.id,message_id=c.message.message_id,reply_markup=keyboard)
     elif c.data == 'М-р по ипот кр':
        bot.send_document(c.message.chat.id,"BQADAgADxAEAAodDcUtLEk-L0SRrrQI")
@@ -200,13 +200,15 @@ def inline(c):
     elif c.data == 'Нач ЦОПП':
        bot.send_document(c.message.chat.id,"BQADAgADyAEAAodDcUvZEl0kBAQvYQI")
     elif c.data == 'М-р по пр эквайринга':
-       bot.send_document(c.message.chat.id,"BQADAgADFwEAAj_5eEsC_POue2R0cAI")
+       bot.send_document(c.message.chat.id,"BQADAgADQAEAAqZFOEuf9iAEbNwdbAI")
     elif c.data == 'Спец под-ки прод-ж':
        bot.send_document(c.message.chat.id,"BQADAgADGAEAAj_5eEsvMu2wpAl2RAI")
     elif c.data == 'Спец сервис подд экв':
-       bot.send_document(c.message.chat.id,"BQADAgADyQEAAodDcUtSBkyZup7UCwI")
+       bot.send_document(c.message.chat.id,"BQADAgADQQEAAqZFOEuPKMI743JZfgI")
     elif c.data == 'Спец техн подд экв':
-       bot.send_document(c.message.chat.id,"BQADAgADygEAAodDcUtxyNnI8y59HAI")       
+       bot.send_document(c.message.chat.id,"BQADAgADQgEAAqZFOEveoZ5JhKdtVQI")
+    elif c.data == 'Лин-Лаб':
+       bot.send_document(c.message.chat.id,"BQADAgADRgEAAqZFOEuRFPyGHxcENAI")   
     elif c.data == '<==':
           keyboard = types.InlineKeyboardMarkup()
           keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
@@ -289,8 +291,7 @@ def inline(c):
                     in ['Работники ПФ','Спец по обс кор кл-ов']])
         keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
                     in ['Зам рука по КБ','=>']])
-        bot.edit_message_reply_markup(c.message.chat.id,message_id=c.message.message_id,reply_markup=keyboard) 
-     #   
+        bot.edit_message_reply_markup(c.message.chat.id,message_id=c.message.message_id,reply_markup=keyboard)  
     elif c.data == 'Общие положения.':
        bot.send_document(c.message.chat.id,"BQADAgADKwEAAvp8SEj5YsV_dS1vQwI")
     elif c.data == 'Аппарат ТБ':
