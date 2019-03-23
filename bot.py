@@ -67,15 +67,15 @@ def name(m):
     elif m.text =='Прочее':
         keyboard = types.InlineKeyboardMarkup()
         keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
-                    in ['1031']])
+                    in ['1031','1201']])
         keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
-                    in ['1201']])
+                    in ['3794','3775']])
         keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
-                    in ['3794']])
+                    in ['3333','2357']])
         keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
-                    in ['3775']])
+                    in ['3964','4707']])
         keyboard.add(*[types.InlineKeyboardButton(text=name,callback_data=name) for name
-                    in ['3333']])
+                    in ['4756']])
         msg = bot.send_message(m.chat.id,'-------Выберите методику-----',reply_markup=keyboard)    
 @bot.callback_query_handler(func=lambda c:True)
 def inline(c):
@@ -266,9 +266,14 @@ def inline(c):
     elif c.data == '3333':
        bot.send_document(c.message.chat.id,"BQADAgADkwMAAkcYaUhFEeX_bsIoVQI")   
        bot.send_document(c.message.chat.id,"BQADAgADlAMAAkcYaUh4-2aT3K8IIQI")
-        
-
-
+    elif c.data == '2357':
+       bot.send_document(c.message.chat.id,"BQADAgADEQIAApqdsUgKDssDC6-BhAI")
+    elif c.data == '3964':
+       bot.send_document(c.message.chat.id,"BQADAgADdAQAAnivsEiuO2MRo9_tswI")   
+    elif c.data == '4707':
+       bot.send_document(c.message.chat.id,"BQADAgADEgIAApqdsUj0TYoOrCKR0QI")   
+    elif c.data == '4756':
+       bot.send_document(c.message.chat.id,"BQADAgADdQQAAnivsEjCRwJIZLe0YAI") 
 
 
         
