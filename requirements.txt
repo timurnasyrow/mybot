@@ -6,7 +6,7 @@ future==0.16.0
 gunicorn==19.8.1
 idna==2.6
 more-itertools==4.1.0
-numpy==1.13.3
+numpy==1.22.0
 portend==2.2
 PySocks==1.6.8
 pyTelegramBotAPI==3.6.2
